@@ -12,17 +12,17 @@ type HeroProps = {
 const heroSlots = [
   {
     className: "col-span-12 row-span-2 lg:col-span-7 lg:row-span-2",
-    src: "/images/hero/1.jpg",
+    src: "/images/hero/1.JPG",
     alt: "Naturalna fotografia — kadry hero 1",
   },
   {
     className: "col-span-6 row-span-1 lg:col-span-5 lg:row-span-1",
-    src: "/images/hero/2.jpg",
+    src: "/images/hero/2.JPG",
     alt: "Naturalna fotografia — kadry hero 2",
   },
   {
     className: "col-span-6 row-span-1 lg:col-span-5 lg:row-span-1",
-    src: "/images/hero/3.jpg",
+    src: "/images/hero/3.JPG",
     alt: "Naturalna fotografia — kadry hero 3",
   },
 ];
