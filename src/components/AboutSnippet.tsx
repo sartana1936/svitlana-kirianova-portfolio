@@ -9,8 +9,8 @@ type AboutSnippetProps = {
 
 export function AboutSnippet({ dict }: AboutSnippetProps) {
   return (
-    <section id="about" className="bg-surface px-6 py-20 lg:px-8 lg:py-28">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+    <section id="about" className="w-full max-w-full overflow-x-hidden bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div className="mx-auto grid w-full min-w-0 max-w-6xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
         <FadeUp>
           <div className="aspect-[4/5] max-w-md overflow-hidden rounded-2xl bg-gradient-to-br from-beige-light via-beige-medium to-beige-deep ring-1 ring-border">
             <div className="flex h-full items-center justify-center">

@@ -83,7 +83,7 @@ export function PortfolioGallery({ dict }: PortfolioGalleryProps) {
 
       <motion.div
         layout
-        className="columns-1 gap-6 sm:columns-2 lg:columns-3"
+        className="w-full max-w-full columns-1 gap-6 sm:columns-2 lg:columns-3"
       >
         <AnimatePresence mode="popLayout">
           {filteredItems.map((item) => (
@@ -120,7 +120,7 @@ export function PortfolioGallery({ dict }: PortfolioGalleryProps) {
                       width={1200}
                       height={1600}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="block h-auto w-full"
+                        className="block h-auto max-w-full w-full"
                       style={{ height: "auto" }}
                     />
                     <div className="pointer-events-none absolute inset-0 bg-charcoal/0 transition-colors duration-300 group-hover:bg-charcoal/10" />

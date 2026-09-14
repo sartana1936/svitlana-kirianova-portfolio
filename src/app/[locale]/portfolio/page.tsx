@@ -40,8 +40,8 @@ export default async function PortfolioPage({ params }: PageProps) {
   return (
     <>
       <PortfolioHeader locale={locale} dict={dict} />
-      <main className="flex-1 bg-surface px-6 py-16 lg:px-8 lg:py-24">
-        <div className="mx-auto max-w-6xl">
+      <main className="flex-1 w-full max-w-full overflow-x-hidden bg-surface px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div className="mx-auto w-full min-w-0 max-w-6xl">
           <PortfolioGallery dict={dict} />
         </div>
       </main>

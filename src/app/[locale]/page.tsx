@@ -42,7 +42,7 @@ export default async function HomePage({ params }: PageProps) {
   return (
     <>
       <Navbar locale={locale} dict={dict} />
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">
         <Hero dict={dict} />
         <AboutSnippet dict={dict} />
         <PortfolioTeaser locale={locale} dict={dict} />

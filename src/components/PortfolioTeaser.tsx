@@ -14,8 +14,8 @@ type PortfolioTeaserProps = {
 
 export function PortfolioTeaser({ locale, dict }: PortfolioTeaserProps) {
   return (
-    <section className="px-6 py-20 lg:px-8 lg:py-28">
-      <div className="mx-auto max-w-6xl">
+    <section className="w-full max-w-full overflow-x-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div className="mx-auto w-full min-w-0 max-w-6xl">
         <FadeUp className="mb-12 max-w-2xl">
           <h2 className="font-heading text-3xl text-charcoal sm:text-4xl">
             {dict.portfolio.teaserTitle}
@@ -44,7 +44,7 @@ export function PortfolioTeaser({ locale, dict }: PortfolioTeaserProps) {
                       width={600}
                       height={800}
                       sizes="(max-width: 1024px) 50vw, 25vw"
-                      className="block h-auto w-full"
+                      className="block h-auto max-w-full w-full"
                       style={{ height: "auto" }}
                     />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/50 to-transparent px-3 py-4">

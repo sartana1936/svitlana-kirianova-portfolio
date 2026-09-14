@@ -11,10 +11,11 @@ export function InstagramNavLink({ label }: InstagramNavLinkProps) {
       href={siteConfig.instagram}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-1.5 text-sm font-medium text-stone transition-colors hover:text-accent"
+      className="flex shrink-0 items-center gap-1 text-xs font-medium text-stone transition-colors hover:text-accent sm:gap-1.5 sm:text-sm"
+      aria-label={label}
     >
-      <InstagramIcon className="h-4 w-4" />
-      {label}
+      <InstagramIcon className="h-4 w-4 shrink-0" />
+      <span className="hidden sm:inline">{label}</span>
     </a>
   );
 }

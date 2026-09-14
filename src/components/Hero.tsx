@@ -29,13 +29,13 @@ const heroSlots = [
 
 export function Hero({ dict }: HeroProps) {
   return (
-    <section id="hero" className="px-6 py-16 lg:px-8 lg:py-24">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
-        <FadeUp className="space-y-6">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent">
+    <section id="hero" className="w-full max-w-full overflow-x-hidden px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div className="mx-auto grid w-full min-w-0 max-w-6xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <FadeUp className="min-w-0 space-y-6">
+          <p className="break-words text-sm font-medium uppercase tracking-[0.15em] text-accent sm:tracking-[0.2em]">
             {dict.hero.tagline}
           </p>
-          <h1 className="font-heading text-4xl leading-tight text-charcoal sm:text-5xl lg:text-[3.25rem]">
+          <h1 className="break-words font-heading text-3xl leading-tight text-charcoal sm:text-4xl md:text-5xl lg:text-[3.25rem]">
             {dict.hero.headline}
           </h1>
           <p className="max-w-lg text-lg leading-relaxed text-stone">
@@ -49,7 +49,7 @@ export function Hero({ dict }: HeroProps) {
 
         <FadeUp
           delay={0.15}
-          className="grid grid-cols-12 auto-rows-[120px] gap-3 sm:auto-rows-[140px] lg:auto-rows-[160px]"
+          className="grid min-w-0 grid-cols-12 auto-rows-[120px] gap-3 sm:auto-rows-[140px] lg:auto-rows-[160px]"
         >
           {heroSlots.map((slot, index) => (
             <div
