@@ -23,7 +23,7 @@ export function PortfolioTeaser({ locale, dict }: PortfolioTeaserProps) {
           <p className="mt-4 text-lg text-stone">{dict.portfolio.teaserSubtitle}</p>
         </FadeUp>
 
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
           {portfolioTeaserItems.map((item, index) => (
             <FadeUp key={item.id} delay={index * 0.05}>
               <div className="group overflow-hidden rounded-xl ring-1 ring-border transition-shadow duration-300 hover:shadow-md">

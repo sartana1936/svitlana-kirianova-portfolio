@@ -17,6 +17,8 @@ export type PortfolioItem = {
 /** Must match exact case-sensitive filenames in public/images/portfolio/ */
 const IMAGE_EXT = ".JPG";
 
+export const HERO_MAIN_SRC = `/images/hero-main${IMAGE_EXT}`;
+
 const CATEGORY_COUNTS = {
   rodzinne: 13,
   pary: 21,
@@ -98,6 +100,7 @@ export type PortfolioTeaserItem = {
   src: string;
 };
 
+/** Featured preview cards on the home page (Hero / Portfolio teaser). */
 export const portfolioTeaserItems: PortfolioTeaserItem[] = [
   {
     id: "teaser-portret-kobiecy",
@@ -109,13 +112,7 @@ export const portfolioTeaserItems: PortfolioTeaserItem[] = [
     id: "teaser-portret-meski",
     category: "portret-meski",
     labelKey: "portretMeski",
-    src: `/images/portfolio/portret-meski/1${IMAGE_EXT}`,
-  },
-  {
-    id: "teaser-pary",
-    category: "couples",
-    labelKey: "couples",
-    src: `/images/portfolio/pary/1${IMAGE_EXT}`,
+    src: `/images/portfolio/portret-meski/3${IMAGE_EXT}`,
   },
   {
     id: "teaser-rodzinne",
