@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { FadeUp } from "@/components/FadeUp";
 import type { Dictionary } from "@/i18n/types";
+import { ABOUT_PHOTO_SRC } from "@/lib/portfolio-data";
 
 type AboutSnippetProps = {
   dict: Dictionary;
@@ -9,15 +11,20 @@ type AboutSnippetProps = {
 
 export function AboutSnippet({ dict }: AboutSnippetProps) {
   return (
-    <section id="about" className="w-full max-w-full overflow-x-hidden bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section
+      id="about"
+      className="w-full max-w-full overflow-x-hidden bg-surface px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+    >
       <div className="mx-auto grid w-full min-w-0 max-w-6xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
         <FadeUp>
-          <div className="aspect-[4/5] max-w-md overflow-hidden rounded-2xl bg-gradient-to-br from-beige-light via-beige-medium to-beige-deep ring-1 ring-border">
-            <div className="flex h-full items-center justify-center">
-              <span className="text-xs font-medium uppercase tracking-widest text-stone/50">
-                Portrait
-              </span>
-            </div>
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl ring-1 ring-border">
+            <Image
+              src={ABOUT_PHOTO_SRC}
+              alt={dict.about.title}
+              fill
+              sizes="(max-width: 1024px) 100vw, 400px"
+              className="object-cover object-[center_20%]"
+            />
           </div>
         </FadeUp>
 

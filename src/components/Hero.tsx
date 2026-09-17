@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FadeUp } from "@/components/FadeUp";
 import type { Dictionary } from "@/i18n/types";
 import { ContactButton } from "@/components/ContactProvider";
-import { HERO_MAIN_SRC } from "@/lib/portfolio-data";
+import { heroFeaturedCards } from "@/lib/portfolio-data";
 
 type HeroProps = {
   dict: Dictionary;
@@ -33,17 +33,25 @@ export function Hero({ dict }: HeroProps) {
           </ContactButton>
         </FadeUp>
 
-        <FadeUp delay={0.15} className="min-w-0">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-beige-medium ring-1 ring-border sm:aspect-[3/4] lg:aspect-[4/5]">
-            <Image
-              src={HERO_MAIN_SRC}
-              alt={dict.hero.headline}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-[center_20%]"
-            />
-          </div>
+        <FadeUp
+          delay={0.15}
+          className="grid min-w-0 grid-cols-12 auto-rows-[120px] gap-3 sm:auto-rows-[140px] lg:auto-rows-[160px]"
+        >
+          {heroFeaturedCards.map((card, index) => (
+            <div
+              key={card.id}
+              className={`${card.className} relative overflow-hidden rounded-2xl bg-beige-medium ring-1 ring-border`}
+            >
+              <Image
+                src={card.src}
+                alt={dict.portfolio.categories[card.labelKey]}
+                fill
+                priority={index === 0}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          ))}
         </FadeUp>
       </div>
     </section>
