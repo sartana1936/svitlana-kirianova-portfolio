@@ -41,6 +41,8 @@ export type Dictionary = {
       portretMeski: string;
       couples: string;
       family: string;
+      slubne: string;
+      slubneDescription: string;
     };
     bookingBanner: string;
     bookCta: string;

@@ -27,33 +27,22 @@ export function PortfolioTeaser({ locale, dict }: PortfolioTeaserProps) {
           {portfolioTeaserItems.map((item, index) => (
             <FadeUp key={item.id} delay={index * 0.05}>
               <div className="group overflow-hidden rounded-xl ring-1 ring-border transition-shadow duration-300 hover:shadow-md">
-                {item.placeholder || !item.src ? (
-                  <div className="flex aspect-[3/4] flex-col items-center justify-center gap-2 bg-gradient-to-br from-beige-light via-beige-medium to-beige-deep p-4">
-                    <span className="text-center text-xs font-medium uppercase tracking-widest text-stone/50">
+                <div className="relative">
+                  <Image
+                    src={item.src}
+                    alt={dict.portfolio.categories[item.labelKey]}
+                    width={600}
+                    height={800}
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                    className="block h-auto max-w-full w-full"
+                    style={{ height: "auto" }}
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/50 to-transparent px-3 py-4">
+                    <span className="text-xs font-medium text-beige-light">
                       {dict.portfolio.categories[item.labelKey]}
                     </span>
-                    <span className="text-center text-[10px] text-stone/40">
-                      {dict.portfolio.comingSoon}
-                    </span>
                   </div>
-                ) : (
-                  <div className="relative">
-                    <Image
-                      src={item.src}
-                      alt={dict.portfolio.categories[item.labelKey]}
-                      width={600}
-                      height={800}
-                      sizes="(max-width: 1024px) 50vw, 25vw"
-                      className="block h-auto max-w-full w-full"
-                      style={{ height: "auto" }}
-                    />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/50 to-transparent px-3 py-4">
-                      <span className="text-xs font-medium text-beige-light">
-                        {dict.portfolio.categories[item.labelKey]}
-                      </span>
-                    </div>
-                  </div>
-                )}
+                </div>
               </div>
             </FadeUp>
           ))}

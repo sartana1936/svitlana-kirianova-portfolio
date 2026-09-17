@@ -25,6 +25,7 @@ const categoryLabels: Record<
   "portret-meski": "portretMeski",
   couples: "couples",
   family: "family",
+  slubne: "slubne",
 };
 
 export function PortfolioGallery({ dict }: PortfolioGalleryProps) {
@@ -107,7 +108,9 @@ export function PortfolioGallery({ dict }: PortfolioGalleryProps) {
                       {dict.portfolio.categories[categoryLabels[item.category]]}
                     </span>
                     <span className="text-center text-xs text-stone/60">
-                      {dict.portfolio.comingSoon}
+                      {item.category === "slubne"
+                        ? dict.portfolio.categories.slubneDescription
+                        : dict.portfolio.comingSoon}
                     </span>
                   </div>
                 ) : (

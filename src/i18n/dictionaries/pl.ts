@@ -35,13 +35,13 @@ export const pl: Dictionary = {
   portfolio: {
     metaTitle: "Portfolio — Svitlana Kirianova",
     metaDescription:
-      "Pełne portfolio sesji fotograficznych — portrety, pary, rodzinne. Naturalna fotografia w Katowicach i na Śląsku.",
+      "Pełne portfolio sesji fotograficznych — portrety kobiece i męskie, pary, rodzinne i ślubne. Naturalna fotografia w Katowicach i na Śląsku.",
     title: "Portfolio",
     subtitle:
-      "Wybrane kadry z sesji — portrety, pary i rodzinne historie pełne emocji.",
+      "Wybrane kadry z sesji — portrety, pary, rodzinne i ślubne historie pełne emocji.",
     teaserTitle: "Portfolio",
     teaserSubtitle:
-      "Portrety, pary i sesje rodzinne — zobacz pełną galerię i wybierz swój ulubiony styl.",
+      "Portrety, pary, sesje rodzinne i ślubne — zobacz pełną galerię i wybierz swój ulubiony styl.",
     teaserCta: "Zobacz pełne portfolio",
     categories: {
       all: "Wszystkie",
@@ -49,6 +49,8 @@ export const pl: Dictionary = {
       portretMeski: "Portret męski",
       couples: "Pary / Love Story",
       family: "Rodzinne",
+      slubne: "Ślubne",
+      slubneDescription: "Fotografia ślubna",
     },
     bookingBanner:
       "Masz pomysł na sesję? Napisz — chętnie porozmawiam o koncepcji, terminie i miejscu.",

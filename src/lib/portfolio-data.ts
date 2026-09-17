@@ -2,7 +2,8 @@ export type PortfolioCategoryId =
   | "portret-kobiecy"
   | "portret-meski"
   | "couples"
-  | "family";
+  | "family"
+  | "slubne";
 
 export type PortfolioFilter = "all" | PortfolioCategoryId;
 
@@ -16,53 +17,63 @@ export type PortfolioItem = {
 /** Must match exact case-sensitive filenames in public/images/portfolio/ */
 const IMAGE_EXT = ".JPG";
 
-/** pary/4.JPG is not present in the repo — list only existing files */
-const PARY_IMAGE_NUMBERS = [1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12] as const;
-const RODZINNE_IMAGE_NUMBERS = [1, 2, 3, 4, 5, 6, 7] as const;
+const CATEGORY_COUNTS = {
+  rodzinne: 13,
+  pary: 21,
+  "portret-meski": 15,
+  "portret-kobiecy": 22,
+  slubne: 10,
+} as const;
 
-function buildGalleryItems(
+function buildSequentialItems(
   category: PortfolioCategoryId,
   folder: string,
-  numbers: readonly number[],
+  count: number,
 ): PortfolioItem[] {
-  return numbers.map((number) => ({
-    id: `${folder}-${number}`,
-    category,
-    src: `/images/portfolio/${folder}/${number}${IMAGE_EXT}`,
-  }));
+  return Array.from({ length: count }, (_, index) => {
+    const number = index + 1;
+
+    return {
+      id: `${folder}-${number}`,
+      category,
+      src: `/images/portfolio/${folder}/${number}${IMAGE_EXT}`,
+    };
+  });
 }
 
-function buildPlaceholderItems(
-  category: "portret-kobiecy" | "portret-meski",
-  folder: string,
-): PortfolioItem[] {
-  return [1, 2, 3].map((number) => ({
-    id: `${folder}-placeholder-${number}`,
-    category,
-    src: `/images/portfolio/${folder}/${number}${IMAGE_EXT}`,
-    placeholder: true,
-  }));
-}
-
-export const couplesItems = buildGalleryItems("couples", "pary", PARY_IMAGE_NUMBERS);
-export const familyItems = buildGalleryItems(
+export const familyItems = buildSequentialItems(
   "family",
   "rodzinne",
-  RODZINNE_IMAGE_NUMBERS,
+  CATEGORY_COUNTS.rodzinne,
 );
-export const portretKobiecyPlaceholders = buildPlaceholderItems(
-  "portret-kobiecy",
-  "portret-kobiecy",
+export const couplesItems = buildSequentialItems(
+  "couples",
+  "pary",
+  CATEGORY_COUNTS.pary,
 );
-export const portretMeskiPlaceholders = buildPlaceholderItems(
+export const portretMeskiItems = buildSequentialItems(
   "portret-meski",
   "portret-meski",
+  CATEGORY_COUNTS["portret-meski"],
+);
+export const portretKobiecyItems = buildSequentialItems(
+  "portret-kobiecy",
+  "portret-kobiecy",
+  CATEGORY_COUNTS["portret-kobiecy"],
+);
+export const slubneItems = buildSequentialItems(
+  "slubne",
+  "slubne",
+  CATEGORY_COUNTS.slubne,
 );
 
-/** Aggregated gallery for the "Wszystkie" tab — all available pary & rodzinne photos. */
+/** Aggregated gallery for the "Wszystkie" tab. */
 export const portfolioItems: PortfolioItem[] = [
+  ...portretKobiecyItems,
+  ...portretMeskiItems,
   ...couplesItems,
   ...familyItems,
+  ...slubneItems,
 ];
 
 export const portfolioFilters: PortfolioFilter[] = [
@@ -71,6 +82,7 @@ export const portfolioFilters: PortfolioFilter[] = [
   "portret-meski",
   "couples",
   "family",
+  "slubne",
 ];
 
 export type PortfolioTeaserLabelKey =
@@ -83,8 +95,7 @@ export type PortfolioTeaserItem = {
   id: string;
   category: PortfolioCategoryId;
   labelKey: PortfolioTeaserLabelKey;
-  src?: string;
-  placeholder?: boolean;
+  src: string;
 };
 
 export const portfolioTeaserItems: PortfolioTeaserItem[] = [
@@ -92,13 +103,13 @@ export const portfolioTeaserItems: PortfolioTeaserItem[] = [
     id: "teaser-portret-kobiecy",
     category: "portret-kobiecy",
     labelKey: "portretKobiecy",
-    placeholder: true,
+    src: `/images/portfolio/portret-kobiecy/1${IMAGE_EXT}`,
   },
   {
     id: "teaser-portret-meski",
     category: "portret-meski",
     labelKey: "portretMeski",
-    placeholder: true,
+    src: `/images/portfolio/portret-meski/1${IMAGE_EXT}`,
   },
   {
     id: "teaser-pary",
@@ -118,14 +129,16 @@ export function getItemsForFilter(filter: PortfolioFilter): PortfolioItem[] {
   switch (filter) {
     case "all":
       return portfolioItems;
+    case "portret-kobiecy":
+      return portretKobiecyItems;
+    case "portret-meski":
+      return portretMeskiItems;
     case "couples":
       return couplesItems;
     case "family":
       return familyItems;
-    case "portret-kobiecy":
-      return portretKobiecyPlaceholders;
-    case "portret-meski":
-      return portretMeskiPlaceholders;
+    case "slubne":
+      return slubneItems;
     default:
       return portfolioItems;
   }

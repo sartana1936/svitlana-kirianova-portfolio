@@ -35,13 +35,13 @@ export const en: Dictionary = {
   portfolio: {
     metaTitle: "Portfolio — Svitlana Kirianova",
     metaDescription:
-      "Full photography portfolio — portraits, couples, and family sessions. Natural photography in Katowice and Silesia.",
+      "Full photography portfolio — women's and men's portraits, couples, family, and wedding sessions. Natural photography in Katowice and Silesia.",
     title: "Portfolio",
     subtitle:
-      "Selected frames from sessions — portraits, couples, and family stories full of emotion.",
+      "Selected frames from sessions — portraits, couples, family, and wedding stories full of emotion.",
     teaserTitle: "Portfolio",
     teaserSubtitle:
-      "Portraits, couples, and family sessions — browse the full gallery and find your favorite style.",
+      "Portraits, couples, family, and wedding sessions — browse the full gallery and find your favorite style.",
     teaserCta: "View full portfolio",
     categories: {
       all: "All",
@@ -49,6 +49,8 @@ export const en: Dictionary = {
       portretMeski: "Men's portrait",
       couples: "Couples / Love Story",
       family: "Family",
+      slubne: "Weddings",
+      slubneDescription: "Wedding photography",
     },
     bookingBanner:
       "Have a session idea? Message me — I'd love to talk about the concept, date, and location.",
