@@ -40,18 +40,16 @@ export function Hero({ dict }: HeroProps) {
           {heroFeaturedCards.map((card, index) => (
             <div
               key={card.id}
-              className={`${card.className} relative overflow-hidden rounded-2xl bg-beige-light p-3 shadow-sm ring-1 ring-border sm:p-4 lg:p-5`}
+              className={`${card.className} relative overflow-hidden rounded-2xl bg-beige-medium ring-1 ring-border`}
             >
-              <div className="relative h-full min-h-0 w-full">
-                <Image
-                  src={card.src}
-                  alt={dict.portfolio.categories[card.labelKey]}
-                  fill
-                  priority={index === 0}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-contain object-center"
-                />
-              </div>
+              <Image
+                src={card.src}
+                alt={dict.portfolio.categories[card.labelKey]}
+                fill
+                priority={index === 0}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className={`object-cover ${card.objectPosition ?? "object-center"}`}
+              />
             </div>
           ))}
         </FadeUp>

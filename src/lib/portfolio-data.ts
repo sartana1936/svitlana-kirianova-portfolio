@@ -30,27 +30,36 @@ export type HeroFeaturedCard = {
   src: string;
   labelKey: PortfolioTeaserLabelKey;
   className: string;
+  /** Tailwind object-position utility for focal point when cropping with object-cover. */
+  objectPosition?: string;
 };
 
-/** Three portfolio preview cards in the home page hero. */
+/**
+ * Three portfolio preview cards in the home page hero.
+ * Images chosen by measured aspect ratio: portrait (~2:3) for the large slot,
+ * landscape (~3:2) for the two stacked right slots.
+ */
 export const heroFeaturedCards: HeroFeaturedCard[] = [
   {
     id: "hero-rodzinne",
     src: `/images/portfolio/rodzinne/1${IMAGE_EXT}`,
     labelKey: "family",
     className: "col-span-12 row-span-2 lg:col-span-7 lg:row-span-2",
-  },
-  {
-    id: "hero-portret-meski",
-    src: `/images/portfolio/portret-meski/1${IMAGE_EXT}`,
-    labelKey: "portretMeski",
-    className: "col-span-6 row-span-1 lg:col-span-5 lg:row-span-1",
+    objectPosition: "object-[center_35%]",
   },
   {
     id: "hero-portret-kobiecy",
-    src: `/images/portfolio/portret-kobiecy/1${IMAGE_EXT}`,
+    src: `/images/portfolio/portret-kobiecy/16${IMAGE_EXT}`,
     labelKey: "portretKobiecy",
     className: "col-span-6 row-span-1 lg:col-span-5 lg:row-span-1",
+    objectPosition: "object-center",
+  },
+  {
+    id: "hero-pary",
+    src: `/images/portfolio/pary/19${IMAGE_EXT}`,
+    labelKey: "couples",
+    className: "col-span-6 row-span-1 lg:col-span-5 lg:row-span-1",
+    objectPosition: "object-center",
   },
 ];
 
