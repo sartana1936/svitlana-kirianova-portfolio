@@ -21,7 +21,7 @@ export const pl: Dictionary = {
   },
   hero: {
     tagline: "Zdejmuję maski, pokazuję prawdziwe emocje",
-    headline: "Naturalna fotografia pełna emocji na Śląsku",
+    headline: "Naturalna fotografia pełna emocji",
     subheadline:
       "Sesje w Katowicach i okolicach — autentyczne chwile, bez sztucznej pozy. Ty jesteś sobą, ja łapię to, co najpiękniejsze.",
     cta: "Zarezerwuj termin",
