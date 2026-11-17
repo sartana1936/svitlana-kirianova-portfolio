@@ -68,7 +68,7 @@ const CATEGORY_COUNTS = {
   pary: 21,
   "portret-meski": 15,
   "portret-kobiecy": 22,
-  slubne: 10,
+  slubne: 29,
 } as const;
 
 function buildSequentialItems(
