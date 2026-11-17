@@ -32,7 +32,14 @@ export function AboutSnippet({ dict }: AboutSnippetProps) {
           <h2 className="font-heading text-3xl text-charcoal sm:text-4xl">
             {dict.about.title}
           </h2>
-          <p className="text-lg leading-relaxed text-stone">{dict.about.body}</p>
+          {dict.about.body.split("\n\n").map((paragraph) => (
+            <p
+              key={paragraph}
+              className="whitespace-pre-line text-base leading-relaxed text-stone sm:text-lg"
+            >
+              {paragraph}
+            </p>
+          ))}
         </FadeUp>
       </div>
     </section>

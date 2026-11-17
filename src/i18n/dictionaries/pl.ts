@@ -30,7 +30,7 @@ export const pl: Dictionary = {
   about: {
     title: "O mnie",
     body:
-      "Jestem Svitlana — fotografuję w Katowicach i na całym Śląsku. Wierzę, że najpiękniejsze zdjęcia powstają, gdy czujesz się swobodnie. Moja sesja to spokojna rozmowa, naturalne światło i chwile, które zostają na zawsze.",
+      "Cześć, mam na imię Svitlana!\nOd ponad 10 lat mieszkam i pracuję w Polsce. Mówię po polsku, angielsku, ukraińsku i rosyjsku.\n\nFotografia i wideo to dla mnie coś więcej niż praca: to pasja, która z hobby stała się zawodem. Inspirują mnie spotkania z nowymi, pozytywnymi ludźmi i szczera wymiana energii podczas sesji. Lubię naturalne kadry, bez sztucznego pozowania. Jeśli się stresujesz, zawsze podpowiem, jak stanąć i gdzie patrzeć, i pomogę Ci się rozluźnić. Chętnie pomogę dobrać ubrania na sesję z Twojej garderoby, to wchodzi w zakres mojej pracy. Jeśli potrzebujesz gotowej stylizacji, współpracuję ze stylistkami i wizażystkami i mogę zorganizować całą sesję pod klucz. Podpowiem też, gdzie można wypożyczyć ubrania.\n\nWykonuję sesje indywidualne (kobiece i męskie), rodzinne, sesje par oraz sesje ślubne dla par młodych. Pracuję zarówno ze światłem naturalnym, jak i studyjnym.\n\nUkończyłam szkołę fotografii w Polsce. Moje prace brały udział w wystawie Związku Polskich Artystów Fotografików (ZPAF) w Katowicach i były wielokrotnie publikowane w europejskich czasopismach.\n\nBędzie mi miło Cię poznać. Napisz do mnie, a razem dobierzemy format sesji dla Ciebie 🤍",
   },
   portfolio: {
     metaTitle: "Portfolio — Svitlana Kirianova",
