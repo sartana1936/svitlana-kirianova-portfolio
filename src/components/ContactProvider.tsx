@@ -9,7 +9,12 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { InstagramIcon, TelegramIcon } from "@/components/icons/SocialIcons";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  PhoneIcon,
+  TelegramIcon,
+} from "@/components/icons/SocialIcons";
 import type { Dictionary } from "@/i18n/types";
 import { siteConfig } from "@/lib/constants";
 
@@ -133,6 +138,23 @@ export function ContactProvider({ dict, children }: ContactProviderProps) {
                 >
                   <InstagramIcon className="h-5 w-5 shrink-0 text-stone" />
                   {dict.contact.instagram}
+                </a>
+                <a
+                  href={siteConfig.facebook}
+                  {...externalLinkProps}
+                  onClick={closeContact}
+                  className="flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3.5 text-sm font-semibold text-charcoal transition-colors hover:border-accent/40 hover:bg-beige-light"
+                >
+                  <FacebookIcon className="h-5 w-5 shrink-0 text-stone" />
+                  {dict.contact.facebook}
+                </a>
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  onClick={closeContact}
+                  className="flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3.5 text-sm font-semibold text-charcoal transition-colors hover:border-accent/40 hover:bg-beige-light"
+                >
+                  <PhoneIcon className="h-5 w-5 shrink-0 text-stone" />
+                  {dict.contact.phone}: {siteConfig.phoneDisplay}
                 </a>
               </div>
             </motion.div>

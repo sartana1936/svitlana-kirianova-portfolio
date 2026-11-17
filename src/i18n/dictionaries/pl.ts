@@ -17,6 +17,8 @@ export const pl: Dictionary = {
     title: "Wybierz sposób kontaktu",
     telegram: "Napisz na Telegram",
     instagram: "Napisz na Instagramie",
+    facebook: "Napisz na Facebooku",
+    phone: "Zadzwoń",
     close: "Zamknij",
   },
   hero: {

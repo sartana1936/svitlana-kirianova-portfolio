@@ -1,4 +1,9 @@
-import { InstagramIcon, TelegramIcon } from "@/components/icons/SocialIcons";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  PhoneIcon,
+  TelegramIcon,
+} from "@/components/icons/SocialIcons";
 import { siteConfig } from "@/lib/constants";
 
 const externalLinkProps = {
@@ -46,6 +51,32 @@ export function SocialContactLinks({
             </span>
           </a>
         </li>
+        <li>
+          <a
+            href={siteConfig.facebook}
+            {...externalLinkProps}
+            className="group inline-flex items-center gap-2.5 text-sm text-stone transition-colors hover:text-accent"
+          >
+            <FacebookIcon className="h-4 w-4 shrink-0 text-stone/70 transition-colors group-hover:text-accent" />
+            <span>
+              Facebook:{" "}
+              <span className="text-charcoal/90 group-hover:text-accent">
+                {siteConfig.facebookLabel}
+              </span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href={`tel:${siteConfig.phone}`}
+            className="group inline-flex items-center gap-2.5 text-sm text-stone transition-colors hover:text-accent"
+          >
+            <PhoneIcon className="h-4 w-4 shrink-0 text-stone/70 transition-colors group-hover:text-accent" />
+            <span className="text-charcoal/90 group-hover:text-accent">
+              {siteConfig.phoneDisplay}
+            </span>
+          </a>
+        </li>
       </ul>
     );
   }
@@ -67,6 +98,21 @@ export function SocialContactLinks({
       >
         <InstagramIcon className="h-4 w-4 shrink-0 text-stone/60 transition-colors group-hover:text-accent" />
         <span className="font-medium">{siteConfig.instagramHandle}</span>
+      </a>
+      <a
+        href={siteConfig.facebook}
+        {...externalLinkProps}
+        className="group inline-flex items-center gap-2 rounded-full border border-transparent px-3 py-1.5 text-sm text-stone transition-all hover:border-border hover:bg-surface hover:text-accent"
+      >
+        <FacebookIcon className="h-4 w-4 shrink-0 text-stone/60 transition-colors group-hover:text-accent" />
+        <span className="font-medium">{siteConfig.facebookLabel}</span>
+      </a>
+      <a
+        href={`tel:${siteConfig.phone}`}
+        className="group inline-flex items-center gap-2 rounded-full border border-transparent px-3 py-1.5 text-sm text-stone transition-all hover:border-border hover:bg-surface hover:text-accent"
+      >
+        <PhoneIcon className="h-4 w-4 shrink-0 text-stone/60 transition-colors group-hover:text-accent" />
+        <span className="font-medium">{siteConfig.phoneDisplay}</span>
       </a>
     </div>
   );

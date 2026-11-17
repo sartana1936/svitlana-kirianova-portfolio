@@ -20,7 +20,10 @@ export function PortfolioHeader({ locale, dict }: PortfolioHeaderProps) {
           href={`/${locale}`}
           className="min-w-0 max-w-[45%] shrink truncate text-xs font-medium text-stone transition-colors hover:text-accent sm:max-w-none sm:text-sm"
         >
-          ← {dict.nav.backHome}
+          <span aria-hidden="true">←</span>
+          <span className="sr-only sm:not-sr-only sm:ml-1">
+            {dict.nav.backHome}
+          </span>
         </Link>
 
         <div className="flex min-w-0 shrink-0 flex-wrap items-center justify-end gap-1.5 sm:gap-3">

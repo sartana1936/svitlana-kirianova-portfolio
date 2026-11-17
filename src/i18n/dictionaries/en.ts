@@ -17,6 +17,8 @@ export const en: Dictionary = {
     title: "Choose how to reach me",
     telegram: "Message on Telegram",
     instagram: "Message on Instagram",
+    facebook: "Message on Facebook",
+    phone: "Call",
     close: "Close",
   },
   hero: {

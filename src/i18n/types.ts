@@ -14,6 +14,8 @@ export type Dictionary = {
     title: string;
     telegram: string;
     instagram: string;
+    facebook: string;
+    phone: string;
     close: string;
   };
   hero: {
