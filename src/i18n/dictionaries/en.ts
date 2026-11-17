@@ -21,7 +21,7 @@ export const en: Dictionary = {
   },
   hero: {
     tagline: "I remove masks and reveal true emotions",
-    headline: "Natural photography full of emotion in Silesia",
+    headline: "Natural photography full of emotion",
     subheadline:
       "Sessions in Katowice and beyond — authentic moments, no forced posing. You stay yourself; I capture what matters most.",
     cta: "Book a session",
